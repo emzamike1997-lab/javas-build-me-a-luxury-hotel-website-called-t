@@ -1,25 +1,30 @@
-CREATE TABLE users (
-  id INT PRIMARY KEY,
-  username VARCHAR(255) NOT NULL,
-  email VARCHAR(255) NOT NULL,
-  password VARCHAR(255) NOT NULL
-);
-
 CREATE TABLE rooms (
   id INT PRIMARY KEY,
-  room_number INT NOT NULL,
-  room_type VARCHAR(255) NOT NULL,
-  price DECIMAL(10, 2) NOT NULL,
-  description TEXT NOT NULL
+  room_number INT,
+  room_type VARCHAR(255),
+  price DECIMAL(10, 2),
+  description TEXT
 );
 
 CREATE TABLE bookings (
   id INT PRIMARY KEY,
-  user_id INT NOT NULL,
-  room_id INT NOT NULL,
-  check_in DATE NOT NULL,
-  check_out DATE NOT NULL,
-  total_cost DECIMAL(10, 2) NOT NULL,
-  FOREIGN KEY (user_id) REFERENCES users(id),
+  room_id INT,
+  guest_name VARCHAR(255),
+  arrival_date DATE,
+  departure_date DATE,
+  total_cost DECIMAL(10, 2),
   FOREIGN KEY (room_id) REFERENCES rooms(id)
+);
+
+CREATE TABLE amenities (
+  id INT PRIMARY KEY,
+  name VARCHAR(255),
+  description TEXT
+);
+
+CREATE TABLE room_amenities (
+  room_id INT,
+  amenity_id INT,
+  FOREIGN KEY (room_id) REFERENCES rooms(id),
+  FOREIGN KEY (amenity_id) REFERENCES amenities(id)
 );
