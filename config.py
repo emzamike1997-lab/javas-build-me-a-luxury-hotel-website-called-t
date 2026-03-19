@@ -1,8 +1,4 @@
-import os
-from dotenv import load_dotenv
-
-load_dotenv()
-
 class Config:
-  SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL')
+  DEBUG = True
+  SQLALCHEMY_DATABASE_URI = 'postgresql://user:password@host:port/dbname'
   SQLALCHEMY_TRACK_MODIFICATIONS = False
