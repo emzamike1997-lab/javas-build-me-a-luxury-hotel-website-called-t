@@ -8,6 +8,14 @@
     color: #fff;
 }
 
+.hero h1 {
+    font-size: 48px;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
 .rooms {
     padding: 2em;
 }
@@ -31,6 +39,16 @@
     border-radius: 10px;
 }
 
+.room h3 {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.room p {
+    font-size: 14px;
+    color: #666;
+}
+
 .amenities {
     padding: 2em;
 }
@@ -43,6 +61,11 @@
 
 .amenities li {
     margin-bottom: 10px;
+}
+
+.amenities li:before {
+    content: "\2022";
+    margin-right: 10px;
 }
 
 footer {
