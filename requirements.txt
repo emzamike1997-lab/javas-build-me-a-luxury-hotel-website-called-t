@@ -1,7 +1,3 @@
 fastapi
 uvicorn[standard]
 pydantic
-Flask
-Flask-SQLAlchemy
-psycopg2
-sqlalchemy
